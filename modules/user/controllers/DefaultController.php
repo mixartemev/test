@@ -2,8 +2,10 @@
 
 namespace app\modules\user\controllers;
 
+use app\modules\user\models\User;
 use Yii;
 use yii\web\Controller;
+use app\momodels\user\models\forms\LoginForm;
 
 /**
  * Default controller for the `user` module
@@ -52,7 +54,7 @@ class DefaultController extends Controller
 
     public function actionProfile()
     {
-        $user = $this->findModel();
+        $user = User::findIdentity();
         $model = new ProfileUpdateForm($user);
 
         if ($model->load(Yii::$app->request->post()) && $model->update()) {
