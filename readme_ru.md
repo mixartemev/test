@@ -10,24 +10,24 @@ OBJECTIVES
    * or Prifile page, where you canchange your password
    * Second page is create of new User, entering email+password.
 * A simplest Object Module with dynamic properties of objects.
-   * Scheme db has such structure:
-      * Object properties: id, name, type, create_by:datetime, updated_by:datetime.
-      Test types:
+   * Спроектировать БД модуля на основе следующих требований:
+      * Объект должен иметь свой id, дату создания, название, тип объекта.  
+      Тестовые типы:
          * Crane
          * Car
-         * Bus
-      * Dynamic property has name and own datatype. Set of properties depend on object type.
-      Test properties:
-         * Crane: height (int), capacity (int), modelname (text)
-         * Car: power (int), formfactor (boolean)
-         * Bus: modelname (text), seating (int)
-   * Automatic fill 3 objects of each type for examples.
+         * Bus  
+      * В зависимости от типа объекта, объект может иметь разные свойства. Количество свойств не должно быть ограничено. Свойство должно иметь свое название и тип данных.  
+      Тестовые свойства:
+         * кран: высота (int), грузоподъемность (int), модель (text)
+         * машина: мощность (int), легковой или нет (boolean)
+         * автобус: модель (text), пассажировместимость (int)  
+   * Заполнить базу тестовыми значениями (можно в ручном режиме из любого используемого инструмента администрирования СУБД). At least по 2­3 объекта каждого типа  
    * Реализовать вывод списка объектов в таблице с колонками
       * id объекта
       * дата создания
       * название
       * количество динамических свойств (число)
-
+      
    * Реализовать страницу объекта с выводом всех его свойств
       * id объекта
       * Дата создания
