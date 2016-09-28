@@ -4,31 +4,31 @@ MODULE ARCHITECTURE SIMPLE EXAMPLE
 OBJECTIVES
 ----------
 
-1. Made from yii2-app-basic template
-2. A simplest User Module extends ActiveRecord, exists required minimum of properties.  
-   a. HomePage is Authorization through email+password, if you aren't logged in.  
-   b. or Prifile page, where you canchange your password  
-   c. Second page is create of new User, entering email+password.
-3. A simplest Object Module with dynamic properties of objects.  
-   a. Спроектировать БД модуля на основе следующих требований:
-      * Объект должен иметь свой id, дату создания, название, тип объекта.  
-      Тестовые типы:
-         1. Crane
-         2. Car
-         3. Bus  
-      * В зависимости от типа объекта, объект может иметь разные свойства. Количество свойств не должно быть ограничено. Свойство должно иметь свое название и тип данных.  
-      Тестовые свойства:
-         1. кран: высота (int), грузоподъемность (int), модель (text)
-         2. машина: мощность (int), легковой или нет (boolean)
-         3. автобус: модель (text), пассажировместимость (int)  
-   b. Заполнить базу тестовыми значениями (можно в ручном режиме из любого используемого инструмента администрирования СУБД). At least по 2­3 объекта каждого типа  
-   c. Реализовать вывод списка объектов в таблице с колонками
+* Made from yii2-app-basic template
+* A simplest User Module extends ActiveRecord, exists required minimum of properties.
+   * HomePage is Authorization through email+password, if you aren't logged in.
+   * or Prifile page, where you canchange your password
+   * Second page is create of new User, entering email+password.
+* A simplest Object Module with dynamic properties of objects.
+   * Scheme db has such structure:
+      * Object properties: id, name, type, create_by:datetime, updated_by:datetime.
+      Test types:
+         * Crane
+         * Car
+         * Bus
+      * Dynamic property has name and own datatype. Set of properties depend on object type.
+      Test properties:
+         * Crane: height (int), capacity (int), modelname (text)
+         * Car: power (int), formfactor (boolean)
+         * Bus: modelname (text), seating (int)
+   * Automatic fill 3 objects of each type for examples.
+   * Реализовать вывод списка объектов в таблице с колонками
       * id объекта
       * дата создания
       * название
       * количество динамических свойств (число)
-      
-   d. Реализовать страницу объекта с выводом всех его свойств
+
+   * Реализовать страницу объекта с выводом всех его свойств
       * id объекта
       * Дата создания
       * название
