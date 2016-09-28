@@ -1,32 +1,45 @@
-Yii 2 Basic Project Template
-============================
+Modules archtecture simple example
+==================================
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
+1. Made from yii2-app-basic template
+2. A simplest User Module extends ActiveRecord, exists required minimum of properties.  
+   a. HomePage is Authorization through email+password, if you aren't logged in.  
+   b. or Prifile page, where you canchange your password  
+   c. Second page is create of new User, entering email+password.
+3. A simplest Object Module with dynamic properties of objects.  
+   a. Спроектировать БД модуля на основе следующих требований:
+      * Объект должен иметь свой id, дату создания, название, тип объекта.  
+      Тестовые типы:
+         1. Crane
+         2. Car
+         3. Bus  
+      * В зависимости от типа объекта, объект может иметь разные свойства. Количество свойств не должно быть ограничено. Свойство должно иметь свое название и тип данных.  
+      Тестовые свойства:
+         1. кран: высота (int), грузоподъемность (int), модель (text)
+         2. машина: мощность (int), легковой или нет (boolean)
+         3. автобус: модель (text), пассажировместимость (int)  
+   b. Заполнить базу тестовыми значениями (можно в ручном режиме из любого используемого инструмента администрирования СУБД). At least по 2­3 объекта каждого типа  
+   c. Реализовать вывод списка объектов в таблице с колонками
+      * id объекта
+      * дата создания
+      * название
+      * количество динамических свойств (число)  
+   d. Реализовать страницу объекта с выводом всех его свойств
+      * id объекта
+      * Дата создания
+      * название
+      * Список динамических свойств в виде: название свойства значение
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
 
 DIRECTORY STRUCTURE
 -------------------
 
       assets/             contains assets definition
-      commands/           contains console commands (controllers)
       config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
+      modules/            contains user and object modules
       runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
+      views/              contains common layout view
       web/                contains the entry script and Web resources
-
 
 
 REQUIREMENTS
@@ -37,27 +50,6 @@ The minimum requirement by this project template that your Web server supports P
 
 INSTALLATION
 ------------
-
-### Install from an Archive File
-
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-Set cookie validation key in `config/web.php` file to some random secret string:
-
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
-```
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/basic/web/
-~~~
-
 
 ### Install via Composer
 
@@ -100,4 +92,3 @@ return [
 - Yii won't create the database for you, this has to be done manually before you can access it.
 - Check and edit the other files in the `config/` directory to customize your application as required.
 - Refer to the README in the `tests` directory for information specific to basic application tests.
-# test
