@@ -1,0 +1,110 @@
+[Wed Sep 28 10:10:27.531338 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP Fatal error:  Class 'app\\models\\ContactForm' not found in /home/mix/www/test/controllers/SiteController.php on line 63, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531413 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP Stack trace:, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531428 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   1. {main}() /home/mix/www/test/web/index.php:0, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531437 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531445 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531454 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531462 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531469 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531476 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:10:27.531484 2016] [:error] [pid 1800] [client 127.0.0.1:49082] PHP   8. app\\controllers\\SiteController->actionContact() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php?r=site%2Fabout
+[Wed Sep 28 10:38:45.125276 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP Fatal error:  Class 'app\\models\\User' not found in /home/mix/www/test/vendor/yiisoft/yii2/web/User.php on line 665, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125318 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP Stack trace:, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125328 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   1. {main}() /home/mix/www/test/web/index.php:0, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125335 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125341 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125347 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125354 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125360 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125365 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125382 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   8. app\\controllers\\SiteController->actionAbout() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125388 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP   9. yii\\base\\Controller->render() /home/mix/www/test/controllers/SiteController.php:81, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125394 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  10. yii\\base\\Controller->renderContent() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:379, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125400 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  11. yii\\base\\View->renderFile() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:393, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125405 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  12. yii\\base\\View->renderPhpFile() /home/mix/www/test/vendor/yiisoft/yii2/base/View.php:247, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125410 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  13. require() /home/mix/www/test/vendor/yiisoft/yii2/base/View.php:325, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125416 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  14. yii\\base\\Component->__get() /home/mix/www/test/vendor/yiisoft/yii2/base/View.php:42, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125421 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  15. yii\\web\\User->getIsGuest() /home/mix/www/test/vendor/yiisoft/yii2/base/Component.php:130, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125427 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  16. yii\\web\\User->getIdentity() /home/mix/www/test/vendor/yiisoft/yii2/web/User.php:340, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:38:45.125432 2016] [:error] [pid 1800] [client 127.0.0.1:49518] PHP  17. yii\\web\\User->renewAuthStatus() /home/mix/www/test/vendor/yiisoft/yii2/web/User.php:188, referer: http://test/index.php?r=user/default/login
+[Wed Sep 28 10:59:08.805012 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP Fatal error:  Class 'app\\models\\ContactForm' not found in /home/mix/www/test/controllers/SiteController.php on line 63, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805073 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP Stack trace:, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805088 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   1. {main}() /home/mix/www/test/web/index.php:0, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805096 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805105 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805116 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805125 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805134 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805143 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php
+[Wed Sep 28 10:59:08.805168 2016] [:error] [pid 1798] [client 127.0.0.1:49696] PHP   8. app\\controllers\\SiteController->actionContact() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155883 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP Fatal error:  Class 'app\\models\\ContactForm' not found in /home/mix/www/test/controllers/SiteController.php on line 63, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155936 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP Stack trace:, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155947 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   1. {main}() /home/mix/www/test/web/index.php:0, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155953 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155959 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155964 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155969 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155974 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155978 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php
+[Wed Sep 28 15:20:18.155983 2016] [:error] [pid 4596] [client 127.0.0.1:59340] PHP   8. app\\controllers\\SiteController->actionContact() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572841 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP Fatal error:  Class 'app\\models\\ContactForm' not found in /home/mix/www/test/controllers/SiteController.php on line 63, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572902 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP Stack trace:, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572912 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   1. {main}() /home/mix/www/test/web/index.php:0, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572918 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572924 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572929 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572934 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572939 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572943 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php
+[Wed Sep 28 16:19:05.572962 2016] [:error] [pid 5301] [client 127.0.0.1:60016] PHP   8. app\\controllers\\SiteController->actionContact() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55, referer: http://test/index.php
+[Wed Sep 28 16:24:34.448223 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP Fatal error:  Class 'app\\modules\\user\\forms\\Profile' not found in /home/mix/www/test/modules/user/controllers/DefaultController.php on line 59
+[Wed Sep 28 16:24:34.448269 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP Stack trace:
+[Wed Sep 28 16:24:34.448282 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   1. {main}() /home/mix/www/test/web/index.php:0
+[Wed Sep 28 16:24:34.448290 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12
+[Wed Sep 28 16:24:34.448297 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375
+[Wed Sep 28 16:24:34.448304 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87
+[Wed Sep 28 16:24:34.448311 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454
+[Wed Sep 28 16:24:34.448317 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154
+[Wed Sep 28 16:24:34.448323 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:24:34.448330 2016] [:error] [pid 5301] [client 127.0.0.1:60084] PHP   8. app\\modules\\user\\controllers\\DefaultController->actionProfile() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:25:18.456490 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP Fatal error:  Class 'app\\modules\\user\\forms\\Profile' not found in /home/mix/www/test/modules/user/controllers/DefaultController.php on line 59
+[Wed Sep 28 16:25:18.456530 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP Stack trace:
+[Wed Sep 28 16:25:18.456541 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   1. {main}() /home/mix/www/test/web/index.php:0
+[Wed Sep 28 16:25:18.456548 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12
+[Wed Sep 28 16:25:18.456554 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375
+[Wed Sep 28 16:25:18.456560 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87
+[Wed Sep 28 16:25:18.456566 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454
+[Wed Sep 28 16:25:18.456572 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154
+[Wed Sep 28 16:25:18.456577 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:25:18.456583 2016] [:error] [pid 4596] [client 127.0.0.1:60088] PHP   8. app\\modules\\user\\controllers\\DefaultController->actionProfile() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:26:41.614872 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP Fatal error:  Class 'app\\modules\\user\\forms\\Profile' not found in /home/mix/www/test/modules/user/controllers/DefaultController.php on line 59
+[Wed Sep 28 16:26:41.614930 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP Stack trace:
+[Wed Sep 28 16:26:41.614960 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   1. {main}() /home/mix/www/test/web/index.php:0
+[Wed Sep 28 16:26:41.614972 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12
+[Wed Sep 28 16:26:41.614982 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375
+[Wed Sep 28 16:26:41.614997 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87
+[Wed Sep 28 16:26:41.615010 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454
+[Wed Sep 28 16:26:41.615024 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154
+[Wed Sep 28 16:26:41.615037 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:26:41.615051 2016] [:error] [pid 1800] [client 127.0.0.1:60100] PHP   8. app\\modules\\user\\controllers\\DefaultController->actionProfile() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:29:52.783485 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP Fatal error:  Class 'app\\modules\\user\\forms\\ProfileForm' not found in /home/mix/www/test/modules/user/controllers/DefaultController.php on line 60
+[Wed Sep 28 16:29:52.783533 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP Stack trace:
+[Wed Sep 28 16:29:52.783543 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   1. {main}() /home/mix/www/test/web/index.php:0
+[Wed Sep 28 16:29:52.783550 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12
+[Wed Sep 28 16:29:52.783556 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375
+[Wed Sep 28 16:29:52.783562 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87
+[Wed Sep 28 16:29:52.783568 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454
+[Wed Sep 28 16:29:52.783573 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154
+[Wed Sep 28 16:29:52.783578 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:29:52.783584 2016] [:error] [pid 1798] [client 127.0.0.1:60104] PHP   8. app\\modules\\user\\controllers\\DefaultController->actionProfile() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:30:47.508658 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP Fatal error:  Class 'app\\modules\\user\\forms\\ProfileForm' not found in /home/mix/www/test/modules/user/controllers/DefaultController.php on line 60
+[Wed Sep 28 16:30:47.508701 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP Stack trace:
+[Wed Sep 28 16:30:47.508712 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   1. {main}() /home/mix/www/test/web/index.php:0
+[Wed Sep 28 16:30:47.508720 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   2. yii\\base\\Application->run() /home/mix/www/test/web/index.php:12
+[Wed Sep 28 16:30:47.508727 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   3. yii\\web\\Application->handleRequest() /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:375
+[Wed Sep 28 16:30:47.508733 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   4. yii\\base\\Module->runAction() /home/mix/www/test/vendor/yiisoft/yii2/web/Application.php:87
+[Wed Sep 28 16:30:47.508748 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   5. yii\\base\\Controller->runAction() /home/mix/www/test/vendor/yiisoft/yii2/base/Module.php:454
+[Wed Sep 28 16:30:47.508754 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   6. yii\\base\\InlineAction->runWithParams() /home/mix/www/test/vendor/yiisoft/yii2/base/Controller.php:154
+[Wed Sep 28 16:30:47.508760 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   7. call_user_func_array() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 16:30:47.508766 2016] [:error] [pid 1797] [client 127.0.0.1:60110] PHP   8. app\\modules\\user\\controllers\\DefaultController->actionProfile() /home/mix/www/test/vendor/yiisoft/yii2/base/InlineAction.php:55
+[Wed Sep 28 17:10:21.797504 2016] [:error] [pid 5300] [client 127.0.0.1:60608] PHP Fatal error:  Uncaught exception 'yii\\base\\InvalidConfigException' with message 'The "id" configuration for the Application is required.' in /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php:220\nStack trace:\n#0 /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php(202): yii\\base\\Application->preInit(Array)\n#1 /home/mix/www/test/web/index.php(12): yii\\base\\Application->__construct(Array)\n#2 {main}\n  thrown in /home/mix/www/test/vendor/yiisoft/yii2/base/Application.php on line 220, referer: http://test/index.php

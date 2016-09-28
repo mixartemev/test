@@ -2,16 +2,39 @@
 
 namespace app\modules\user\controllers;
 
-use app\modules\user\models\User;
 use Yii;
 use yii\web\Controller;
-use app\momodels\user\models\forms\LoginForm;
+use yii\filters\AccessControl;
+use app\modules\user\models\User;
+use app\modules\user\models\forms\LoginForm;
+use app\modules\user\models\forms\ProfileForm;
 
 /**
  * Default controller for the `user` module
  */
 class DefaultController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['logout', 'signup','profile','create'],
+                'rules' => [
+                    [
+                        'actions' => ['signup'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['logout','profile','create'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ]
+        ];
+    }
     /**
      * Login action.
      *
@@ -43,6 +66,7 @@ class DefaultController extends Controller
 
         return $this->goHome();
     }
+
     /**
      * Renders the index view for the module
      * @return string
@@ -54,13 +78,13 @@ class DefaultController extends Controller
 
     public function actionProfile()
     {
-        $user = User::findIdentity();
-        $model = new ProfileUpdateForm($user);
+        $user = User::findIdentity(Yii::$app->user->id);
+        $model = new ProfileForm($user);
 
         if ($model->load(Yii::$app->request->post()) && $model->update()) {
             return $this->redirect(['index']);
         } else {
-            return $this->render('update', [
+            return $this->render('profile', [
                 'model' => $model,
             ]);
         }

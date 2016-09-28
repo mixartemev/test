@@ -4,19 +4,32 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'basic',
+    'name' => 'Тест',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' =>'user/default/profile',
+    'language'=>'ru-RU',
+    'modules' => [
+        /*'object' => [
+            'class' => 'app\modules\object\Module',
+        ],*/
+        'user' => [
+            'class' => 'app\modules\user\Module',
+            'controllerNamespace' => 'app\modules\user\controllers',
+            'viewPath' => '@app/modules/user/views',
+        ],
+    ],
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'KIDEr_7brTqPJP0Jlim2mxQGvy3MxlOX',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\modules\user\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['user/default/login'], // moving login action to user module
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
