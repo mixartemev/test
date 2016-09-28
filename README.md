@@ -1,5 +1,8 @@
-Modules archtecture simple example
+MODULE ARCHITECTURE SIMPLE EXAMPLE
 ==================================
+
+OBJECTIVES
+----------
 
 1. Made from yii2-app-basic template
 2. A simplest User Module extends ActiveRecord, exists required minimum of properties.  
