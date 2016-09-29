@@ -16,7 +16,7 @@ $this->title = 'Профиль ' . Yii::$app->user->identity->email;
 
         <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'newPassword')->passwordInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
         <div class="form-group">
             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>

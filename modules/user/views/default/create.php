@@ -16,10 +16,12 @@ $this->title = 'Новый пользователь';
 
         <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'newPassword')->passwordInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
+
+        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
         <div class="form-group">
-            <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton('Создать', ['class' => 'btn btn-primary']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

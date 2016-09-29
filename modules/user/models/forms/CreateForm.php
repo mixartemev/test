@@ -4,12 +4,12 @@ namespace app\modules\user\models\forms;
 
 use app\modules\user\models\User;
 use yii\base\Model;
-use yii\db\ActiveQuery;
 use Yii;
 
-class Create extends Model
+class CreateForm extends Model
 {
 	public $email;
+	public $password;
 
 	/**
 	 * @var User
@@ -17,19 +17,12 @@ class Create extends Model
 	private $_user;
 
 	/**
-	 * @param User $user
 	 * @param array $config
 	 */
-	public function __construct(User $user, $config = [])
+	public function __construct($config = [])
 	{
-		$this->_user = $user;
+		$this->_user = new User();
 		parent::__construct($config);
-	}
-
-	public function init()
-	{
-		$this->email = $this->_user->email;
-		parent::init();
 	}
 
 	public function rules()
@@ -42,22 +35,23 @@ class Create extends Model
 				'unique',
 				'targetClass' => User::className(),
 				'message' => 'ERROR_EMAIL_EXISTS',
-				'filter' => function (ActiveQuery $query) {
-					$query->andWhere(['<>', 'id', $this->_user->id]);
-				},
 			],
 			['email', 'string', 'max' => 255],
+
+			['password', 'required'],
+			['password', 'string', 'min' => 6],
 		];
 	}
 
 	/**
 	 * @return bool
 	 */
-	public function update()
+	public function create()
 	{
 		if ($this->validate()) {
 			$user = $this->_user;
 			$user->email = $this->email;
+			$user->setPassword($this->password);
 			return $user->save();
 		} else {
 			return false;

@@ -10,7 +10,7 @@ use yii\base\Model;
  */
 class ProfileForm extends Model
 {
-    public $newPassword;
+    public $password;
 
     /**
      * @var User
@@ -33,7 +33,7 @@ class ProfileForm extends Model
     public function rules()
     {
         return [
-            ['newPassword', 'string', 'min' => 6],
+            ['password', 'string', 'min' => 6],
         ];
     }
 
@@ -43,7 +43,7 @@ class ProfileForm extends Model
     public function attributeLabels()
     {
         return [
-            'newPassword' => 'Новый пароль'
+            'password' => 'Новый пароль'
         ];
     }
 
@@ -54,7 +54,7 @@ class ProfileForm extends Model
     {
         if ($this->validate()) {
             $user = $this->_user;
-            $user->setPassword($this->newPassword);
+            $user->setPassword($this->password);
             return $user->save();
         } else {
             return false;

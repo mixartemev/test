@@ -8,6 +8,7 @@ use yii\filters\AccessControl;
 use app\modules\user\models\User;
 use app\modules\user\models\forms\LoginForm;
 use app\modules\user\models\forms\ProfileForm;
+use app\modules\user\models\forms\CreateForm;
 
 /**
  * Default controller for the `user` module
@@ -85,6 +86,19 @@ class DefaultController extends Controller
             return $this->redirect(['index']);
         } else {
             return $this->render('profile', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    public function actionCreate()
+    {
+        $model = new CreateForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->create()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('create', [
                 'model' => $model,
             ]);
         }

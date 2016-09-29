@@ -10,9 +10,10 @@ $config = [
     'defaultRoute' =>'user/default/profile',
     'language'=>'ru-RU',
     'modules' => [
-        /*'object' => [
+        'object' => [
             'class' => 'app\modules\object\Module',
-        ],*/
+            'defaultRoute' => 'object',
+        ],
         'user' => [
             'class' => 'app\modules\user\Module',
             'controllerNamespace' => 'app\modules\user\controllers',
