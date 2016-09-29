@@ -7,13 +7,12 @@ use Yii;
 /**
  * This is the model class for table "object_property_val".
  *
- * @property integer $id
  * @property integer $object_id
  * @property integer $property_id
  * @property string $val
  *
- * @property ObjectProperty $property
  * @property Object $object
+ * @property ObjectProperty $property
  */
 class ObjectPropertyVal extends \yii\db\ActiveRecord
 {
@@ -31,11 +30,11 @@ class ObjectPropertyVal extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['object_id', 'property_id', 'val'], 'required'],
             [['object_id', 'property_id'], 'integer'],
-            [['val'], 'required'],
             [['val'], 'string', 'max' => 255],
-            [['property_id'], 'exist', 'skipOnError' => true, 'targetClass' => ObjectProperty::className(), 'targetAttribute' => ['property_id' => 'id']],
             [['object_id'], 'exist', 'skipOnError' => true, 'targetClass' => Object::className(), 'targetAttribute' => ['object_id' => 'id']],
+            [['property_id'], 'exist', 'skipOnError' => true, 'targetClass' => ObjectProperty::className(), 'targetAttribute' => ['property_id' => 'id']],
         ];
     }
 
@@ -45,7 +44,6 @@ class ObjectPropertyVal extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
             'object_id' => 'Object ID',
             'property_id' => 'Property ID',
             'val' => 'Val',
@@ -55,16 +53,16 @@ class ObjectPropertyVal extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProperty()
+    public function getObject()
     {
-        return $this->hasOne(ObjectProperty::className(), ['id' => 'property_id'])->inverseOf('objectPropertyVals');
+        return $this->hasOne(Object::className(), ['id' => 'object_id'])->inverseOf('objectPropertyVals');
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getObject()
+    public function getProperty()
     {
-        return $this->hasOne(Object::className(), ['id' => 'object_id'])->inverseOf('objectPropertyVals');
+        return $this->hasOne(ObjectProperty::className(), ['id' => 'property_id'])->inverseOf('objectPropertyVals');
     }
 }

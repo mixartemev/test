@@ -24,6 +24,7 @@ class m160929_113428_create_object_property_table extends Migration
             'object_property',
             'datatype_id'
         );
+
         // add foreign key for table `datatype`
         $this->addForeignKey(
             'fk-object_property-datatype_id',
@@ -32,6 +33,23 @@ class m160929_113428_create_object_property_table extends Migration
             'datatype',
             'id'
         );
+
+        // fill
+        $this->insert('object_property',[
+            'id' => 1,
+            'name' => 'Модель',
+            'datatype_id' => 1,
+        ]);
+        $this->insert('object_property',[
+            'id' => 2,
+            'name' => 'Высота',
+            'datatype_id' => 2,
+        ]);
+        $this->insert('object_property',[
+            'id' => 3,
+            'name' => 'Легковая ли',
+            'datatype_id' => 3,
+        ]);
     }
 
     /**

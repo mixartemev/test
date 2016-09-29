@@ -14,10 +14,11 @@ class m160929_114433_create_object_table extends Migration
     {
         $this->createTable('object', [
             'id' => $this->primaryKey(),
-			'created_by' => $this->date(),
+			'created_by' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
             'name' => $this->string(),
             'object_type_id' => $this->integer()->notNull(),
         ]);
+
         // add foreign key for table `datatype`
         $this->addForeignKey(
             'fk-object-object_type_id',
@@ -26,6 +27,23 @@ class m160929_114433_create_object_table extends Migration
             'object_type',
             'id'
         );
+
+        // fill
+        $this->insert('object',[
+            'id' => 1,
+            'name' => 'Ивановец',
+            'object_type_id' => 1
+        ]);
+        $this->insert('object',[
+            'id' => 2,
+            'name' => 'Зил',
+            'object_type_id' => 2
+        ]);
+        $this->insert('object',[
+            'id' => 3,
+            'name' => 'Икарус',
+            'object_type_id' => 3
+        ]);
     }
 
     /**

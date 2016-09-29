@@ -16,6 +16,20 @@ class m160929_112918_create_object_type_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
         ]);
+
+        // fill
+        $this->insert('object_type',[
+            'id' => 1,
+            'name' => 'Кран',
+        ]);
+        $this->insert('object_type',[
+            'id' => 2,
+            'name' => 'Машина',
+        ]);
+        $this->insert('object_type',[
+            'id' => 3,
+            'name' => 'Автобус',
+        ]);
     }
 
     /**

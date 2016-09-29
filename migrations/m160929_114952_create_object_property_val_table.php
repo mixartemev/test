@@ -13,11 +13,12 @@ class m160929_114952_create_object_property_val_table extends Migration
     public function up()
     {
         $this->createTable('object_property_val', [
-            'id' => $this->primaryKey(),
             'object_id' => $this->integer(),
             'property_id' => $this->integer(),
             'val' => $this->string()->notNull(),
-        ]);
+			'PRIMARY KEY(object_id, property_id)'
+		]);
+
 		// add foreign key for table `object_id`
 		$this->addForeignKey(
 			'fk-object_property_val-object_id',
@@ -36,6 +37,23 @@ class m160929_114952_create_object_property_val_table extends Migration
 			'id',
 			'CASCADE'
 		);
+
+		//fill
+		$this->insert('object_property_val',[
+			'object_id' => 1,
+			'property_id' => 1,
+			'val' => 'КК-ИВН-1',
+		]);
+		$this->insert('object_property_val',[
+			'object_id' => 2,
+			'property_id' => 3,
+			'val' => 0,
+		]);
+		$this->insert('object_property_val',[
+			'object_id' => 3,
+			'property_id' => 1,
+			'val' => 'BUS-ИКР-1',
+		]);
     }
 
     /**

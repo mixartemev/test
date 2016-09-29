@@ -46,13 +46,14 @@ class ObjectPropertyValController extends Controller
 
     /**
      * Displays a single ObjectPropertyVal model.
-     * @param integer $id
+     * @param integer $object_id
+     * @param integer $property_id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionView($object_id, $property_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($object_id, $property_id),
         ]);
     }
 
@@ -66,7 +67,7 @@ class ObjectPropertyValController extends Controller
         $model = new ObjectPropertyVal();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'object_id' => $model->object_id, 'property_id' => $model->property_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -77,15 +78,16 @@ class ObjectPropertyValController extends Controller
     /**
      * Updates an existing ObjectPropertyVal model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param integer $object_id
+     * @param integer $property_id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($object_id, $property_id)
     {
-        $model = $this->findModel($id);
+        $model = $this->findModel($object_id, $property_id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'object_id' => $model->object_id, 'property_id' => $model->property_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -96,12 +98,13 @@ class ObjectPropertyValController extends Controller
     /**
      * Deletes an existing ObjectPropertyVal model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param integer $object_id
+     * @param integer $property_id
      * @return mixed
      */
-    public function actionDelete($id)
+    public function actionDelete($object_id, $property_id)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($object_id, $property_id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -109,13 +112,14 @@ class ObjectPropertyValController extends Controller
     /**
      * Finds the ObjectPropertyVal model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     * @param integer $object_id
+     * @param integer $property_id
      * @return ObjectPropertyVal the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel($object_id, $property_id)
     {
-        if (($model = ObjectPropertyVal::findOne($id)) !== null) {
+        if (($model = ObjectPropertyVal::findOne(['object_id' => $object_id, 'property_id' => $property_id])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
