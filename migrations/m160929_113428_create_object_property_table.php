@@ -50,6 +50,21 @@ class m160929_113428_create_object_property_table extends Migration
             'name' => 'Легковая ли',
             'datatype_id' => 3,
         ]);
+        $this->insert('object_property',[
+            'id' => 4,
+            'name' => 'Грузоподъемность',
+            'datatype_id' => 2,
+        ]);
+        $this->insert('object_property',[
+            'id' => 5,
+            'name' => 'Мощность',
+            'datatype_id' => 2,
+        ]);
+        $this->insert('object_property',[
+            'id' => 6,
+            'name' => 'Пассажировместимость',
+            'datatype_id' => 2,
+        ]);
     }
 
     /**

@@ -60,14 +60,16 @@ class ObjectPropertyValController extends Controller
     /**
      * Creates a new ObjectPropertyVal model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     * @param $object_id
+     * @param $property_id
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($object_id, $property_id)
     {
-        $model = new ObjectPropertyVal();
+        $model = new ObjectPropertyVal(['object_id' => $object_id, 'property_id' => $property_id]);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'object_id' => $model->object_id, 'property_id' => $model->property_id]);
+            return $this->redirect(['object/view', 'id' => $model->object_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -87,7 +89,7 @@ class ObjectPropertyValController extends Controller
         $model = $this->findModel($object_id, $property_id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'object_id' => $model->object_id, 'property_id' => $model->property_id]);
+            return $this->redirect(['object/view', 'id' => $model->object_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,

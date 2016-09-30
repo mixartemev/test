@@ -38,9 +38,9 @@ AppAsset::register($this);
             ['label' => 'Создать пользователя', 'url' => ['/user/default/create']],
             ['label' => 'Объекты', 'url' => ['/object/object/index']],
             ['label' => 'Типы объектов', 'url' => ['/object/object-type/index']],
-            ['label' => 'Свойства объектов', 'url' => ['/object/object-property/index']],
+            //['label' => 'Свойства объектов', 'url' => ['/object/object-property/index']],
             ['label' => 'Типы свойств', 'url' => ['/object/datatype/index']],
-			['label' => 'Значения свойств объектов', 'url' => ['/object/object-property-val/index']],
+			//['label' => 'Значения свойств объектов', 'url' => ['/object/object-property-val/index']],
 			Yii::$app->user->isGuest ? (
                 ['label' => 'Вход', 'url' => ['/user/default/login']]
             ) : (

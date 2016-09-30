@@ -24,26 +24,33 @@ use app\modules\object\models\ObjectPropertyVal;
     <?php ActiveForm::end();
 
     /* А вот и DynamicFields */
-    $props = $model->objectType->getObjectProperties()->select(['id','name'])->asArray()->all();
-
-    foreach ($props as $prop) {
-        $propCond = ['property_id' => $prop['id']];
+    /** @var \app\modules\object\models\ObjectProperty $prop */
+    foreach ($model->objectType->getObjectProperties()->all() as $prop) {
+        $propCond = ['property_id' => $prop->id];
         $valQuery = $model->getObjectPropertyVals()->andWhere($propCond);
         if(!$varRow = $valQuery->one()){
             $varRow = new ObjectPropertyVal($propCond);
-            $varRow->object_id = $model->id;
-            $varRow->property_id = $prop['id'];
         }
-        $action = $varRow->isNewRecord?'create':'update';
-        $form = ActiveForm::begin(['action' => \yii\helpers\Url::toRoute(['object-property-val/'.$action, 'object_id' => $varRow->object_id, 'property_id' => $varRow->property_id])]);
-        echo $form->field($varRow, 'object_id')->hiddenInput()->label(false);
-        echo $form->field($varRow, 'property_id')->hiddenInput()->label(false);
-        echo $form->field($varRow, 'val')->textInput()->label($prop['name']);
+
+        $action = $varRow->isNewRecord ? 'create' : 'update';
+
+        $form = ActiveForm::begin([
+            'action' => [
+                'object-property-val/'.$action,
+                'object_id' => $model->id,
+                'property_id' => $prop->id
+            ]
+        ]);
+
+        echo '<hr>' .
+            $form->field($varRow, 'val')
+            ->{$prop->datatype_id == 3? 'checkbox': 'textInput'}($prop->datatype_id == 2? ['type' => 'number']: ['label' => false]) // в зависимости от типа свойства генерим разные типы полей
+            ->label($prop['name']);
         echo Html::submitButton(ucfirst($action), ['class' => $varRow->isNewRecord ? 'btn btn-success' : 'btn btn-primary']);
+
         ActiveForm::end();
     }
     /* Конец DynamicFields */
-
     ?>
 
 </div>

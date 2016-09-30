@@ -5,6 +5,7 @@ namespace app\modules\object\controllers;
 use Yii;
 use app\modules\object\models\ObjectProperty;
 use yii\data\ActiveDataProvider;
+use yii\db\Migration;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -59,13 +60,18 @@ class ObjectPropertyController extends Controller
     /**
      * Creates a new ObjectProperty model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     * @param int $object_type_id
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($object_type_id)
     {
         $model = new ObjectProperty();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            (new Migration())->insert('object_type_object_property',[ // ToDo пенести в модель
+                'object_type_id' => $object_type_id,
+                'object_property_id' => $model->id
+            ]);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -101,8 +107,12 @@ class ObjectPropertyController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        if($this->findModel($id)->delete()){
+            (new Migration())->delete('object_type_object_property',[ // ToDo пенести в модель
+                //'object_type_id' => $object_type_id, // ToDo добавить условие типа свойства, что бы одно свойтво можно было привязывать к нескольким типам объектов
+                'object_property_id' => $this->id
+            ]);
+        }
         return $this->redirect(['index']);
     }
 

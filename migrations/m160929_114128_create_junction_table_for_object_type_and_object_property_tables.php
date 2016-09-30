@@ -73,6 +73,19 @@ class m160929_114128_create_junction_table_for_object_type_and_object_property_t
             'object_type_id' => 3,
             'object_property_id' => 1
         ]);
+        $this->insert('object_type_object_property',[
+            'object_type_id' => 1,
+            'object_property_id' => 4
+        ]);
+        $this->insert('object_type_object_property',[
+            'object_type_id' => 2,
+            'object_property_id' => 5
+        ]);
+        $this->insert('object_type_object_property',[
+            'object_type_id' => 3,
+            'object_property_id' => 6
+        ]);
+
     }
 
     /**

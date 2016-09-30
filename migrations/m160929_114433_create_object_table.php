@@ -44,6 +44,21 @@ class m160929_114433_create_object_table extends Migration
             'name' => 'Икарус',
             'object_type_id' => 3
         ]);
+        $this->insert('object',[
+            'id' => 4,
+            'name' => 'Костромич',
+            'object_type_id' => 1
+        ]);
+        $this->insert('object',[
+            'id' => 5,
+            'name' => 'BMW',
+            'object_type_id' => 2
+        ]);
+        $this->insert('object',[
+            'id' => 6,
+            'name' => 'Mersedes',
+            'object_type_id' => 3
+        ]);
     }
 
     /**

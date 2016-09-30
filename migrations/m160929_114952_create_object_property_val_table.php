@@ -54,6 +54,21 @@ class m160929_114952_create_object_property_val_table extends Migration
 			'property_id' => 1,
 			'val' => 'BUS-ИКР-1',
 		]);
+		$this->insert('object_property_val',[
+			'object_id' => 1,
+			'property_id' => 4,
+			'val' => 6500,
+		]);
+		$this->insert('object_property_val',[
+			'object_id' => 2,
+			'property_id' => 5,
+			'val' => 130,
+		]);
+		$this->insert('object_property_val',[
+			'object_id' => 3,
+			'property_id' => 6,
+			'val' => 66,
+		]);
     }
 
     /**

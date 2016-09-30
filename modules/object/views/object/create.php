@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\object\models\Object */
 
-$this->title = 'Create Object';
+$this->title = 'Create ' . $model->objectType->name;
 $this->params['breadcrumbs'][] = ['label' => 'Objects', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
