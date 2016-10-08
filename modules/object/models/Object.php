@@ -13,7 +13,7 @@ use Yii;
  * @property integer $object_type_id
  *
  * @property ObjectType $objectType
- * @property ObjectPropertyVal[] $objectPropertyVals
+ * @property ObjectPropertyValText[]|ObjectPropertyValInteger[]|ObjectPropertyValBoolean[]  $objectPropertyVals
  * @property ObjectProperty[] $properties
  */
 class Object extends \yii\db\ActiveRecord

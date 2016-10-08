@@ -13,36 +13,24 @@ class m160929_114955_create_object_property_val_boolean_table extends Migration
     public function up()
     {
         $this->createTable('object_property_val_boolean', [
-            'object_id' => $this->integer(),
-            'property_id' => $this->integer(),
-            'val' => $this->string()->notNull(),
-			'PRIMARY KEY(object_id, property_id)'
+            'id' => $this->primaryKey(),
+            'val' => $this->boolean()->notNull(),
 		]);
 
-		// add foreign key for table `object_id`
+		// add foreign key for table `object_val`
 		$this->addForeignKey(
-			'fk-object_property_val_boolean-object_id',
+			'fk-val_boolean',
 			'object_property_val_boolean',
-			'object_id',
-			'object',
 			'id',
-			'CASCADE'
-		);
-		// add foreign key for table `property_id`
-		$this->addForeignKey(
-			'fk-object_property_val_boolean-object_property_id',
-			'object_property_val_boolean',
-			'property_id',
-			'object_property',
-			'id',
+			'object_property_val',
+			'val_id',
 			'CASCADE'
 		);
 
 		//fill
 		$this->insert('object_property_val_boolean',[
-			'object_id' => 2,
-			'property_id' => 3,
-			'val' => 0,
+			'id' => 7,
+			'val' => false,
 		]);
     }
 
@@ -51,8 +39,7 @@ class m160929_114955_create_object_property_val_boolean_table extends Migration
      */
     public function down()
     {
-		$this->dropForeignKey('fk-object_property_val_boolean-object_id', 'object_property_val_boolean');
-		$this->dropForeignKey('fk-object_property_val_boolean-object_property_id', 'object_property_val_boolean');
+		$this->dropForeignKey('fk-val_boolean', 'object_property_val_boolean');
         $this->dropTable('object_property_val_boolean');
     }
 }
